@@ -1,0 +1,19 @@
+#
+#
+#GF_INSTALL_LOCATION=
+#
+# Carefully check the security site, if the level is Important, update a fixed version of Tomcat
+#
+# https://dl.grafana.com/enterprise/release/grafana-enterprise_9.2.1_amd64.deb
+# https://dl.grafana.com/enterprise/release/grafana-enterprise-9.2.1-1.x86_64.rpm
+
+GF_NAME=grafana-enterprise
+GF_VER=9.2.1
+GF_FILE=$(GF_NAME)_$(GF_VER)
+GF_DEB=$(GF_FILE)_amd64.deb
+GF_RPM=$(GF_FILE)-1.x86_64.rpm
+#
+GF_DEB_URL:="https://dl.grafana.com/enterprise/release/$(GF_DEB)"
+GF_RPM_URL:="https://dl.grafana.com/enterprise/release/$(GF_RPM)"
+#
+#

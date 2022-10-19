@@ -1,18 +1,16 @@
-# Configuration Env
+# Archappl-Datasource-env
 
-## [Todo] 
+Configuration Environment for Archiver Appliance Datasource on Grafana https://github.com/sasaki77/archiverappliance-datasource
 
-### Build a script to replace several generic variable within the repository
+##
 
-The following varialbles should have a prefix
+## Grafana
 
-* `INSTALL_PATH`
-* `INSTALL_LOCATION`
-* `SITE_TEMPATE_PATH`
-* `USERID`
-* `GROUID`
+### Debian 11 / Rocky 8
 
-
-
-
-
+```
+make install.gfdeb or install.gfrpm
+make conf.gf
+make start.gf
+make status.gf
+```

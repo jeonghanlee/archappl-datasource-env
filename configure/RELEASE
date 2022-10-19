@@ -1,19 +1,28 @@
+# This environment will not use git clone, so it is not useful to define them here,
+# but we use the similar way to handle other envionrment
 
-APPNAME:=env-template
+APPNAME:=archappl-datasource
+
+
 
 ## Where the Source repository SRC_URL/SRC_NAME
 #
-SRC_URL:=https://github.com/jeonghanlee
+SRC_URL:=https://github.com/sasaki77
 SRC_NAME:=${APPNAME}
 
-
-## Which the source tag / branch / hash id would like to use
-# 2020-04-21
-SRC_TAG:=master
+# grafana-cli --pluginUrl https://github.com/sasaki77/archiverappliance-datasource/releases/latest/download/archiverappliance-datasource.zip plugins install sasaki77-archiverappliance-datasource
+# grafana-cli --pluginUrl https://github.com/sasaki77/archiverappliance-datasource/releases/download/1.4.2/archiverappliance-datasource.zip plugins install sasaki77-archiverappliance-datasource
+#  
+SRC_TAG=1.4.2
 
 # Placeholder for the site-specific version control 
-SRC_VERSION:=master
+SRC_VERSION=1.4.2
 
+ifeq ($(SRC_TAG), latest)
+SRC_RELEASE_PATH=latest/download
+else
+SRC_RELEASE_PATH=download/$(SRC_TAG)
+endif
 
 -include $(TOP)/../RELEASE.local
 -include $(TOP)/configure/RELEASE.local
